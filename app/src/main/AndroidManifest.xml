@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MitMit">
-        <activity android:name=".Activite"></activity>
+        <activity android:name=".Activite_Loisirs_Description"></activity>
+        <activity android:name=".test" />
+        <activity android:name=".LoisirDescriptionActivity" />
+        <activity android:name=".DescriptionLoisirActivity" />
+        <activity android:name=".recyclerview.LoisirActivite" />
         <activity android:name=".Authentification" />
         <activity android:name=".MainActivity">
             <intent-filter>

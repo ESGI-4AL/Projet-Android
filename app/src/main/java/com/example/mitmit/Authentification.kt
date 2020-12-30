@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import com.example.mitmit.recyclerview.LoisirActivite
+import kotlinx.android.synthetic.main.activity_loisir_activite.*
 
 class Authentification : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +19,7 @@ class Authentification : AppCompatActivity() {
 
             Toast.makeText(this,"Button is clicked", Toast.LENGTH_LONG).show();
 
-            val intent2 = Intent(this,Activite::class.java);
+            val intent2 = Intent(this,MainActivity::class.java);
 
             startActivity(intent2);
 
