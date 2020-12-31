@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
             Toast.makeText(this,"Button is clicked", Toast.LENGTH_LONG).show();
 
-            val intent2 = Intent(this,LoisirActivite::class.java);
+            val intent2 = Intent(this,Inscription::class.java);
 
             startActivity(intent2);
 

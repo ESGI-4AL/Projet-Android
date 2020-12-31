@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "347348988185",
+    "project_id": "mitmit-2",
+    "storage_bucket": "mitmit-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:347348988185:android:6044903c407a2623f41588",
+        "android_client_info": {
+          "package_name": "com.example.mitmit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "347348988185-1i7hcb7b0jppi62ofphck8moorig99la.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBylLILjuoJvTnRF0-gaAglN280QGLciBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "347348988185-1i7hcb7b0jppi62ofphck8moorig99la.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

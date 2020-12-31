@@ -26,12 +26,12 @@
             android:layout_width="match_parent"
             android:layout_height="76dp"
             android:background="@color/ciel"
-            android:text="Connecter" />
+            android:text="Inscription" />
 
         <Button
             android:id="@+id/Identifier"
             android:layout_width="match_parent"
             android:layout_height="63dp"
-            android:text="S'identifier" />
+            android:text="Connexion" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
