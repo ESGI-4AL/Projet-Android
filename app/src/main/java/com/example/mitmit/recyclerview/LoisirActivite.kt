@@ -10,7 +10,7 @@ import com.example.mitmit.R
 import kotlinx.android.synthetic.main.activity_loisir_activite.*
 import kotlinx.android.synthetic.main.row.*
 import java.text.FieldPosition
-
+//modification
 class LoisirActivite : AppCompatActivity(), OnLoisirsClickedListener{
 
     private  val loisirs = listOf(
@@ -43,7 +43,7 @@ class LoisirActivite : AppCompatActivity(), OnLoisirsClickedListener{
    override fun onLoisirsClicked(loisirs: Loisirs?) {
     Log.d("toto",loisirs.toString())
     val intent = Intent(this, Activite_Loisirs_Description::class.java)
-    //intent.putExtra("Titre", item.title)
+    //intent.putExtras()
     //intent.putExtra("Description", item.description)
     //intent.putExtra("Image", item.img.toString())
     startActivity(intent)
