@@ -5,7 +5,6 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="16dp"
-
     >
 
     <ImageView
@@ -13,7 +12,6 @@
         android:layout_height="75dp"
         android:src="@mipmap/ic_launcher"
         android:id="@+id/image"
-
         />
 
     <LinearLayout
@@ -41,10 +39,5 @@
             android:textColor="#a9a9a9"
             android:textSize="15sp"
             android:textStyle="bold"></TextView>
-
-
-
     </LinearLayout>
-
-
 </LinearLayout>

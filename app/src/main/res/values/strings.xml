@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">MitMit</string>
-    <color name="ciel">#FF8FC5EF</color>
+    <string name="sign_in_with_google">S\'inscrire avec Google</string>
+    <string name="validate">Valider</string>
+    <string name="example">Exemple</string>
+    <string name="id">ID</string>
+    <string name="name">Nom</string>
+    <string name="email_address">Addresse mail</string>
+    <string name="sign_out">déconnecter</string>
 </resources>

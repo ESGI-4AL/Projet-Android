@@ -1,33 +1,78 @@
 {
   "project_info": {
-    "project_number": "347348988185",
-    "project_id": "mitmit-2",
-    "storage_bucket": "mitmit-2.appspot.com"
+    "project_number": "329373739982",
+    "project_id": "meetmeet-ee58d",
+    "storage_bucket": "meetmeet-ee58d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:347348988185:android:6044903c407a2623f41588",
+        "mobilesdk_app_id": "1:329373739982:android:2bd18a722f90559386199f",
         "android_client_info": {
-          "package_name": "com.example.mitmit"
+          "package_name": "com.alghom.meetmeet"
         }
       },
       "oauth_client": [
         {
-          "client_id": "347348988185-1i7hcb7b0jppi62ofphck8moorig99la.apps.googleusercontent.com",
+          "client_id": "329373739982-iircf2g6sm57e6i3vooc43pglq8sonp1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alghom.meetmeet",
+            "certificate_hash": "65f6500d464f1945b2faae484cc0180a74bad281"
+          }
+        },
+        {
+          "client_id": "329373739982-31virnrmeqk9athuf7mtcstpr8dl35m7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBylLILjuoJvTnRF0-gaAglN280QGLciBM"
+          "current_key": "AIzaSyChv9kG3lAtWqpSZmtGx_CeA0vjk2nWsi8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "347348988185-1i7hcb7b0jppi62ofphck8moorig99la.apps.googleusercontent.com",
+              "client_id": "329373739982-31virnrmeqk9athuf7mtcstpr8dl35m7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329373739982:android:9a3db7c80efc03a086199f",
+        "android_client_info": {
+          "package_name": "com.example.mitmit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "329373739982-d0uo0cq4h6n8t1g6usr5c92c06mpvsjg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mitmit",
+            "certificate_hash": "65f6500d464f1945b2faae484cc0180a74bad281"
+          }
+        },
+        {
+          "client_id": "329373739982-31virnrmeqk9athuf7mtcstpr8dl35m7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChv9kG3lAtWqpSZmtGx_CeA0vjk2nWsi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "329373739982-31virnrmeqk9athuf7mtcstpr8dl35m7.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

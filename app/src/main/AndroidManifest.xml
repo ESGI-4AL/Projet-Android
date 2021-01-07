@@ -9,13 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MitMit">
-        <activity android:name=".Inscription"></activity>
-        <activity android:name=".Activite_Loisirs_Description" />
-        <activity android:name=".test" />
-        <activity android:name=".LoisirDescriptionActivity" />
-        <activity android:name=".DescriptionLoisirActivity" />
-        <activity android:name=".recyclerview.LoisirActivite" />
-        <activity android:name=".Authentification" />
+        <activity android:name=".SignInActivity"></activity>
+        <activity android:name=".recyclerview.LoisirsActivity" />
+        <activity android:name=".DashboardActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
