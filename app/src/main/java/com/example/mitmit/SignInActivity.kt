@@ -4,14 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.example.mitmit.databinding.ActivitySignInBinding
+import com.example.mitmit.daos.UserDao
+import com.example.mitmit.models.User
 import com.example.mitmit.recyclerview.LoisirsActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import kotlinx.android.synthetic.main.activity_sign_in.*
 
 class SignInActivity : AppCompatActivity() {
 
@@ -24,10 +27,7 @@ class SignInActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val binding = ActivitySignInBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(R.layout.activity_sign_in)
 
         // Configure Google Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -39,9 +39,10 @@ class SignInActivity : AppCompatActivity() {
         //Firebase Auth instance
         mAuth = FirebaseAuth.getInstance()
 
-        binding.signInBtn.setOnClickListener {
+        sign_in_btn.setOnClickListener {
             signIn()
         }
+
     }
 
     private fun signIn() {
@@ -74,17 +75,31 @@ class SignInActivity : AppCompatActivity() {
 
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
+
         mAuth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("SignInActivity", "signInWithCredential:success")
-                    val loisirsIntent = Intent(this, LoisirsActivity::class.java)
-                    startActivity(loisirsIntent)
+                    if (task.result?.additionalUserInfo?.isNewUser == true) {
+                        addToFirestoreUser(task.result?.user)
+                        val loisirsIntent = Intent(this, LoisirsActivity::class.java)
+                        startActivity(loisirsIntent)
+                    } else {
+                        val dashboardIntent = Intent(this, DashboardActivity::class.java)
+                        startActivity(dashboardIntent)
+                    }
+
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.d("SignInActivity", "signInWithCredential:failure")
                 }
             }
+    }
+
+    private fun addToFirestoreUser(firebaseUser : FirebaseUser?) {
+        val user = User(firebaseUser!!.uid, firebaseUser.displayName, firebaseUser.email,"", emptyList())
+        val usersDao = UserDao()
+        usersDao.addUser(user)
     }
 }

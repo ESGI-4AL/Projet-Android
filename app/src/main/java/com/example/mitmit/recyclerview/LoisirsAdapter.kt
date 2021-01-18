@@ -15,7 +15,6 @@ class LoisirsAdapter(private val loisirs:List<Loisir>, private val onLoisirClick
 
     override fun getItemCount(): Int = loisirs.size
 
-
     override fun onBindViewHolder(holder: LoisirViewHolder, position: Int) {
         val loisir = loisirs[position]
         holder.bind(loisir, onLoisirClicked)

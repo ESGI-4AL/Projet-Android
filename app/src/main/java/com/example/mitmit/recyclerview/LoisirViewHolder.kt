@@ -29,7 +29,7 @@ class LoisirViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         textView1?.text = loisir.title
         image?.setImageResource(loisir.img)
 
-        itemView?.setOnClickListener(this)
+        itemView.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {

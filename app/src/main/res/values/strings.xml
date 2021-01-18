@@ -6,5 +6,11 @@
     <string name="id">ID</string>
     <string name="name">Nom</string>
     <string name="email_address">Addresse mail</string>
+    <string name="phone_number">Numéro de téléphone</string>
     <string name="sign_out">déconnecter</string>
+    <string name="phone_number_placeholder">06 12 34 56 78</string>
+    <string name="edit">modifier</string>
+    <string name="interests">Loisirs</string>
+    <string name="logo_description">App logo</string>
+    <string name="fab_description">Validate choices</string>
 </resources>
