@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.example.mitmit.nearby_users_recyclerview.UsersActivity
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -19,12 +20,10 @@ class MainActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         val user = mAuth.currentUser
 
-        /**If user is not authenticated, send him to SignInActivity to authenticate first.
-         * Else send him to DashboardActivity*/
         Handler(Looper.getMainLooper()).postDelayed({
             if (user != null) {
-                val dashboardIntent = Intent(this, DashboardActivity::class.java)
-                startActivity(dashboardIntent)
+                val usersIntent = Intent(this, UsersActivity::class.java)
+                startActivity(usersIntent)
                 finish()
             } else {
                 val signInIntent = Intent(this, SignInActivity::class.java)

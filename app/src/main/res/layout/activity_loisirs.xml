@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".recyclerview.LoisirsActivity">
+    tools:context=".interests_recyclerview.LoisirsActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/loisirs_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarStyle="outsideOverlay"
@@ -25,6 +25,6 @@
         android:layout_margin="16dp"
         android:backgroundTint="@color/purple_500"
         android:src="@drawable/ic_validate"
-        app:rippleColor="@color/white"
+        app:tint="@color/white"
         android:contentDescription="@string/fab_description" />
 </RelativeLayout>

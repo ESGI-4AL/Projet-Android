@@ -2,15 +2,24 @@
     <string name="app_name">MitMit</string>
     <string name="sign_in_with_google">S\'inscrire avec Google</string>
     <string name="validate">Valider</string>
-    <string name="example">Exemple</string>
+    <string name="example">Example</string>
+    <string name="welcome">bienvenue</string>
     <string name="id">ID</string>
     <string name="name">Nom</string>
     <string name="email_address">Addresse mail</string>
     <string name="phone_number">Numéro de téléphone</string>
     <string name="sign_out">déconnecter</string>
+    <string name="delete">supprimer</string>
     <string name="phone_number_placeholder">06 12 34 56 78</string>
     <string name="edit">modifier</string>
     <string name="interests">Loisirs</string>
     <string name="logo_description">App logo</string>
     <string name="fab_description">Validate choices</string>
+    <string name="title_activity_get_location">GetLocationActivity</string>
+    <string name="enable_gps">Enable GPS</string>
+    <string name="required_for_this_app">Required for this app</string>
+    <string name="enable_now">Enable Now</string>
+    <string name="location_permission_not_granted">Location Permission not granted</string>
+    <string name="title_activity_user_details">UserDetailsActivity</string>
+    <string name="indicate">Balayez vers le bas pour afficher les Meeties à proximié</string>
 </resources>

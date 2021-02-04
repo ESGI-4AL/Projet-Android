@@ -1,11 +1,15 @@
-package com.example.mitmit.recyclerview
+package com.example.mitmit.interests_recyclerview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mitmit.models.Loisir
 
-class LoisirsAdapter(private val loisirs:List<Loisir>, private val onLoisirClicked: OnLoisirClicked) :
-    RecyclerView.Adapter<LoisirViewHolder>() {
+class LoisirsAdapter(
+    private val loisirs:List<Loisir>,
+    private val onLoisirClicked: OnLoisirClicked
+    ) : RecyclerView.Adapter<LoisirViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LoisirViewHolder {
 
         val inflater = LayoutInflater.from(parent.context)

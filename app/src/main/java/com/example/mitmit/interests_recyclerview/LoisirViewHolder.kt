@@ -1,4 +1,4 @@
-package com.example.mitmit.recyclerview
+package com.example.mitmit.interests_recyclerview
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,9 +7,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mitmit.R
+import com.example.mitmit.models.Loisir
 
 class LoisirViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.row, parent, false)), View.OnClickListener {
+    RecyclerView.ViewHolder(inflater.inflate(R.layout.loisir_item, parent, false)), View.OnClickListener {
 
     private var textView1:TextView? = null
     private var textView2:TextView? = null

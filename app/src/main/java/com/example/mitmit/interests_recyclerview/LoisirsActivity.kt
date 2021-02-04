@@ -1,4 +1,4 @@
-package com.example.mitmit.recyclerview
+package com.example.mitmit.interests_recyclerview
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mitmit.DashboardActivity
 import com.example.mitmit.R
 import com.example.mitmit.daos.UserDao
+import com.example.mitmit.models.Loisir
+import com.example.mitmit.nearby_users_recyclerview.UsersActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_loisirs.*
@@ -29,9 +31,6 @@ class LoisirsActivity : AppCompatActivity(), OnLoisirClicked{
 
     private lateinit var mAuth: FirebaseAuth
 
-    private val db = FirebaseFirestore.getInstance()
-    private val usersCollection = db.collection("users")
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loisirs)
@@ -39,21 +38,23 @@ class LoisirsActivity : AppCompatActivity(), OnLoisirClicked{
         mAuth = FirebaseAuth.getInstance()
         val currentUser = mAuth.currentUser
 
-        recyclerView?.apply {
+        loisirs_recyclerView?.apply {
             layoutManager = LinearLayoutManager(this@LoisirsActivity)
             adapter = LoisirsAdapter(loisirs, this@LoisirsActivity)
         }
 
         btnValidate?.setOnClickListener {
-            Log.d("toto","doesnt work")
-            // Attention l'async
-
             val userDao = UserDao()
             userDao.editLoisirs(currentUser, loisirsOfUser)
 
-            val dashboardIntent = Intent(this, DashboardActivity::class.java)
-            startActivity(dashboardIntent)
-            finish()
+            val flag = intent.getStringExtra("flag")
+            if (flag.equals("signinActivity")) {
+                val usersIntent = Intent(this, UsersActivity::class.java)
+                startActivity(usersIntent)
+                finish()
+            } else{
+                finish()
+            }
         }
 
     }

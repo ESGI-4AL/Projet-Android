@@ -7,7 +7,7 @@ import android.util.Log
 import com.bumptech.glide.Glide
 import com.example.mitmit.daos.UserDao
 import com.example.mitmit.models.User
-import com.example.mitmit.recyclerview.LoisirsActivity
+import com.example.mitmit.interests_recyclerview.LoisirsActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.toObject
@@ -31,18 +31,19 @@ class DashboardActivity : AppCompatActivity() {
         phone_number_txt.isEnabled = false
 
         docRef.get().addOnSuccessListener { documentSnapshot ->
-            Log.d("issue1", "${documentSnapshot.data}")
+
             user = documentSnapshot.toObject<User>()
-            Log.d("issue2", user.toString())
             name_txt.text = user?.displayName
             email_txt.text = user?.email
             interests_txt.text = user?.loisirs?.reduce { acc, s -> "$acc  $s" }
+
             if(!user?.phone.equals("")){
                 phone_number_txt.hint = user?.phone
             }
+            Glide.with(this)
+                    .load(user?.photoUrl)
+                    .into(profile_image)
         }
-
-        Glide.with(this).load(currentUser.photoUrl).into(profile_image)
 
         sign_out_btn.setOnClickListener {
             mAuth.signOut()
@@ -66,6 +67,20 @@ class DashboardActivity : AppCompatActivity() {
         interests_edit_btn.setOnClickListener {
             val loisirsIntent = Intent(this, LoisirsActivity::class.java)
             startActivity(loisirsIntent)
+        }
+
+        delete_account_btn.setOnClickListener {
+            usersCollection.document(currentUserId)
+                    .delete()
+                    .addOnSuccessListener {
+                        FirebaseAuth.getInstance().currentUser!!.delete().addOnCompleteListener {
+                            val intent = Intent(this, SignInActivity::class.java)
+                            startActivity(intent)
+                        }
+                    }
+                    .addOnFailureListener {
+                        Log.d("Dashboard Activity", it.toString())
+                    }
         }
     }
 }

@@ -4,9 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import com.example.mitmit.daos.UserDao
 import com.example.mitmit.models.User
-import com.example.mitmit.recyclerview.LoisirsActivity
+import com.example.mitmit.interests_recyclerview.LoisirsActivity
+import com.example.mitmit.nearby_users_recyclerview.UsersActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -84,10 +86,13 @@ class SignInActivity : AppCompatActivity() {
                     if (task.result?.additionalUserInfo?.isNewUser == true) {
                         addToFirestoreUser(task.result?.user)
                         val loisirsIntent = Intent(this, LoisirsActivity::class.java)
+                        loisirsIntent.putExtra("flag", "signinActivity")
                         startActivity(loisirsIntent)
+                        finish()
                     } else {
-                        val dashboardIntent = Intent(this, DashboardActivity::class.java)
-                        startActivity(dashboardIntent)
+                        val usersIntent = Intent(this, UsersActivity::class.java)
+                        startActivity(usersIntent)
+                        finish()
                     }
 
                 } else {
@@ -98,7 +103,12 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun addToFirestoreUser(firebaseUser : FirebaseUser?) {
-        val user = User(firebaseUser!!.uid, firebaseUser.displayName, firebaseUser.email,"", emptyList())
+        val user = User(
+                uid = firebaseUser!!.uid,
+                displayName = firebaseUser.displayName,
+                email = firebaseUser.email,
+                photoUrl = firebaseUser.photoUrl.toString(),
+                loisirs = emptyList())
         val usersDao = UserDao()
         usersDao.addUser(user)
     }
